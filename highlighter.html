@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="ie6"><!--[if gt IE 8]><!--><!--<![endif]-->
+<html ng-app="OfficeNote">
+<head>
+    <title>在线批注</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="css/doc.css">
+    <script src="lib/angular.js"></script>
+    <script type="text/javascript" src="lib/rangy-core.js"></script>
+    <script type="text/javascript" src="lib/rangy-classapplier.js"></script>
+    <script type="text/javascript" src="lib/rangy-highlighter.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery.nicescroll/3.6.8/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="scripts/highlight.js"></script>
+</head>
+<body ng-controller="OfficeCtrl">
+    <div id="doc-body">
+        <div id="doc-menu">
+            <ul class="doc-btn">
+
+            </ul>
+        </div>
+
+        <div id="doc-main">
+            <div id="doc-content">
+                <div id="doc-content-body">
+                    <ul id="doc-html" ng-mouseup="AddHighlightText()">
+                       <!--html批注内容-->
+                      <li ng-repeat="page in Pages track by $index"><div class="page-content" data-html="{{page}}"></div><div class="page-index">- {{$index+1}} -</div></li>
+                    </ul>
+                    <!--添加批注-->
+                    <div id="doc-note" ng-show="showNote">
+                        <div id="doc-note-body">
+                            <div class="doc-icon">
+                                <img src="images/user-normal.png" alt=""/>
+                            </div>
+                            <div id="doc-note-content">
+                                <textarea ng-model="commentText"></textarea>
+                                <ul class="doc-btn">
+                                    <li ng-click="classMenu=!classMenu"><i class="icon-high-lighter"></i><span>Highlight</span><a class="icon-high-menu"></a>
+                                        <div class="high-menu" ng-show="classMenu">
+                                            <div class="none hc0" ng-click="setColor('hc0')">不填充</div>
+                                            <div class="color">
+                                                <div title="rgb(192,0,0)" class="hc1" ng-click="setColor('hc1')"></div>
+                                                <div title="rgb(255,0,0)" class="hc2" ng-click="setColor('hc2')"></div>
+                                                <div title="rgb(255,192,0)" class="hc3" ng-click="setColor('hc3')"></div>
+                                                <div title="rgb(255,255,0)" class="hc4" ng-click="setColor('hc4')"></div>
+                                                <div title="rgb(0,176,80)" class="hc5" ng-click="setColor('hc5')"></div>
+                                                <div title="rgb(0,176,240)" class="hc6" ng-click="setColor('hc6')"></div>
+                                                <div title="rgb(0,112,192)" class="hc7" ng-click="setColor('hc7')"></div>
+                                                <div title="rgb(146,208,80)" class="hc8" ng-click="setColor('hc8')"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="doc-note-button">
+                                    <button class="cancel" ng-click="cancleHighLight()">取消</button>
+                                    <button class="ok" ng-click="okHighLight()">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--指示标记-->
+                        <div id="doc-tip-anchor"><div></div></div>
+                    </div>
+                </div>
+                <!--评论列表-->
+                <div id="doc-comment" ng-show="showComment" ng-init="showComment=true">
+                    <div id="doc-comment-head"></div>
+                    <div id="doc-comment-content">
+                        <ul id="doc-comment-list" ng-show="Comments.length!=0">
+                            <li ng-repeat="comment in Comments track by $index" ng-class="{active:comment.isActive}" ng-click="showCurHighlight(comment)" id="highlight_{{comment.ID}}">
+                                <div class="comment-head">
+                                    <div class="doc-icon" ng-class="comment.Style">
+
+                                    </div>
+                                </div>
+                                <div class="comment-menu" ng-click="comment.isShowMenu=!comment.isShowMenu"></div>
+                                <div class="comment-menu-options" ng-show="comment.isShowMenu">
+                                    <div class="comment-arrow-up">
+                                        <div></div>
+                                    </div>
+                                    <div class="comment-menu-items">
+                                        <div class="item">解决</div>
+                                        <div class="item" ng-click="comment.isShowMark=true;comment.isShowMenu=false">删除</div>
+                                        <div class="item">编辑</div>
+                                    </div>
+                                </div>
+                                <div class="comment-content">
+                                    {{comment.Content}}
+                                </div>
+                                <div class="delete-mark" ng-show="comment.isShowMark">
+                                    <div class="comment-del-content">是否删除该评论?</div>
+                                    <div class="comment-del-btn">
+                                        <button ng-click="comment.isShowMark=false">取消</button>
+                                        <button ng-click="deleteHighlight(comment)">确定</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div id="doc-no-comment" ng-show="Comments.length==0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="doc-bottom">
+
+        </div>
+    </div>
+</body>
+</html>

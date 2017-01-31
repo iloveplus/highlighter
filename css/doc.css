@@ -1,0 +1,409 @@
+*{margin: 0;padding: 0}
+html,body{ width: 100%;height: 100%;  }
+
+#doc-body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#doc-menu{
+    width: 100%;
+    height: 38px;
+    background-color: #fff;
+    border-bottom: 1px solid #d7d7d7;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+}
+
+.doc-btn{
+    height: 20px;
+    line-height: 20px;
+    margin-top: 9px;
+    padding-left: 5px;
+    outline: none;
+    border: none;
+}
+.doc-btn li{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+.doc-btn li i{
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+}
+.doc-btn li span{
+    font-size: 13px;
+    color:#111;
+    padding-left: 22px;
+    padding-right: 5px;
+}
+.doc-btn li a{
+    position: absolute;
+    right: -12px;
+    width: 12px;
+    height: 18px;
+    padding-top: 2px;
+}
+.high-menu{
+    position: absolute;
+    width: 88px;
+    height: 70px;
+    background-color: #fff;
+    right: -60px;
+    padding: 5px;
+    border: 1px solid #d7d7d7;
+    overflow: hidden;
+}
+.high-menu .hc0{
+    width: 100%;
+    height: 20px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    color: #111;
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+.high-menu .color{
+    margin: 5px 0;
+}
+.high-menu .color div{
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+.show{
+    display: block!important;
+}
+/*hover*/
+.doc-btn li:hover{
+    background-color: #eaeaea;
+}
+.doc-btn li:hover a{
+    border: 1px solid #eaeaea;
+    border-left:none ;
+}
+/*图标*/
+.icon-add-comment{
+    background: url("../images/common-icons-sprite.png") no-repeat -182px -82px;
+}
+.icon-high-lighter{
+    background: url("../images/common-icons-sprite.png") no-repeat -462px -2px;
+}
+.icon-high-menu{
+    background: url("../images/common-icons-sprite.png") no-repeat -483px -59px;
+}
+
+#doc-main{
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    bottom: 30px;
+}
+#doc-content{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+#doc-content-body{
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-left: 150px;
+}
+#doc-html{
+    width:700px;
+    max-width: 100%;
+    cursor: url(../images/cursor-highlight.png) 11 11, pointer;
+}
+#doc-html img{
+  max-width: 100%;
+  height: inherit;
+}
+#doc-html li{
+  list-style-type: none;
+  padding: 60px 40px;
+  min-height: 850px;
+  border: 1px solid #d7d7d7;
+  line-height: 22px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 10px #e6e6e6;
+  position: relative;
+}
+#doc-html li .page-index{
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+#doc-comment{
+    width:300px ;
+    border: 1px solid #d7d7d7;
+    left:880px;
+    position: absolute;
+    top: 0;
+    bottom: 10px;
+    overflow: hidden;
+}
+#doc-bottom{
+    width:100%;
+    height: 30px;
+    border-top:  1px solid #d7d7d7 ;
+    position: fixed;
+    bottom: 0;
+}
+#doc-comment-head{
+    width: 100%;
+    height: 40px;
+    background-color: #eaeaea;
+    border-bottom: 1px solid #d7d7d7;
+}
+.high-menu .note{
+    display: none;
+}
+
+[class^="hc0"],.hc0 {background-color:#dddddd}
+[class^="hc1"],.hc1{background-color:rgb(192,0,0)}
+[class^="hc2"],.hc2{background-color:rgb(255,0,0)}
+[class^="hc3"],.hc3{background-color:rgb(255,192,0)}
+[class^="hc4"],.hc4{background-color:rgb(255,255,0)}
+[class^="hc5"],.hc5{background-color:rgb(0,176,80)}
+[class^="hc6"],.hc6{background-color:rgb(0,176,240)}
+[class^="hc7"],.hc7{background-color:rgb(0,112,192)}
+[class^="hc8"],.hc8{background-color:rgb(146,208,80)}
+
+
+[class^="hc"].active{
+    border-bottom: 3px solid #000;
+    position: relative;
+}
+
+.note {
+    text-decoration: none;
+    cursor: url(../images/cursor-highlight.png) 11 11, pointer;
+    position: relative;
+}
+
+#doc-note{
+    width: 300px;
+    min-height: 100px;
+    border: 1px solid #d7d7d7;
+    box-shadow: 4px 4px 10px #e6e6e6;
+    background-color: #fff;
+    padding:15px;
+    position: absolute;
+    top: 80px;
+    left: 720px;
+    box-sizing: border-box;
+}
+#doc-tip-anchor{
+    border-bottom: 14px solid rgba(0,0,0,0);
+    border-right: 14px solid #d7d7d7;
+    top: 15px;
+    left: -14px;
+    border-top: 14px solid rgba(0,0,0,0);
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+#doc-tip-anchor div{
+    border-bottom: 12px solid rgba(0,0,0,0);
+    border-right: 12px solid #FFF;
+    margin-left: 2px;
+    border-top: 12px solid rgba(0,0,0,0);
+    position: relative;
+    top: -12px;
+}
+
+#doc-note-body{
+    width:100% ;
+    min-height:100px;
+}
+.doc-icon{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.doc-icon img{
+    width:35px;
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #dedede;
+}
+#doc-note-content{
+    width: 220px;
+    float: left;
+}
+#doc-note-content textarea{
+    width: 100%;
+    outline: none;
+    min-height: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.doc-note-button{
+    margin-top: 10px;
+}
+.doc-note-button button {
+    outline: none;
+    width: 40px;
+    height: 20px;
+    float: right;
+    margin-left: 10px;
+    border: none;
+    line-height: 20px;
+}
+#doc-comment-content{
+    width:100%;
+    height: 100%;
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
+ }
+#doc-comment-list{
+    width:100%;
+    margin-bottom: 40px;
+    /*overflow: hidden;*/
+}
+#doc-comment-list li{
+    width: 100%;
+    min-height:80px;
+    border-bottom: 1px solid #d7d7d7;
+    list-style-type: none;
+    position: relative;
+}
+#doc-comment-list li.active{
+    border-left: 3px solid #ffad01;
+    background-color: #f5f5f5;
+}
+.comment-head{
+    width:100% ;
+    height: 60px;
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+.comment-head-desc{
+    width: 237px;
+    height: 40px;
+    margin-left: 5px;
+    float: left;
+}
+.comment-head-desc p{
+    padding: 0;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+}
+.comment-menu{
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
+    border: 1px solid #d7d7d7;
+    background: url("../images/common-icons-sprite.png") no-repeat -481px -61px;
+}
+.comment-menu-options{
+    border: 1px solid #cbcbcb;
+    box-shadow: -3px 3px 7px -3px #c8c8c8;
+    border-radius: 2px;
+    min-width: 120px;
+    background: #fff;
+    position: absolute;
+    top: 45px;
+    right: 15px;
+    z-index: 99;
+}
+.comment-menu-options .item{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+    padding:0 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.comment-menu-options .item:hover{
+    background-color: #ddd;
+}
+.comment-menu-items{
+    padding: 5px 0;
+}
+.comment-content{
+    font-size: 13px;
+    padding:0 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.comment-arrow-up{
+    width: 0;
+    height: 0;
+    border-left: 10px solid rgba(0,0,0,0);
+    border-right: 3px solid rgba(0,0,0,0);
+    border-bottom: 11px solid #cbcbcb;
+    position: absolute;
+    top: -11px;
+    right: 8px;
+}
+.comment-arrow-up div{
+    border-left: 9px solid rgba(0,0,0,0);
+    border-right: 4px solid rgba(0,0,0,0);
+    border-bottom: 11px solid #fff;
+    position: relative;
+    left: -10px;
+    top: 2px;
+}
+.delete-mark{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+}
+.comment-del-content{
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 15px;
+}
+.comment-del-btn{
+    text-align: center;
+    margin-top: 10px;
+}
+.comment-del-btn button{
+    outline: none;
+    border: none;
+    padding: 2px 5px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+#excel-html{
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+body{
+  margin: 0!important;
+}
+
+td{
+  border: 1px solid #000!important;
+}
