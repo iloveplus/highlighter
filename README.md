@@ -2,7 +2,7 @@
 一个web版的在线word批注插件
 
 ## 在线Demo ##
-https://iloveplus.github.io/highlighter/highlighter.html
+http://www.iloveplus.cn/highlighter/index.html
 
 # 功能介绍： #
 1. 本功能实现了批注与评论之间的双向跳转和自动定位；
