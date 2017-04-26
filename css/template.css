@@ -1,0 +1,170 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.header{
+	position: relative;
+	min-height: 500px;
+    animation: gradientswitch 50s infinite;
+    -webkit-animation: gradientswitch 50 sinfinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes gradientswitch {
+    0% {
+        background: #0087C9;
+    }
+    16% {
+        background: #EF4A53;
+    }
+    32% {
+        background: #FFB463;
+    }
+    49% {
+        background: #33D5D4;
+    }
+    65% {
+        background: #254356;
+    }
+    81% {
+        background :#5B4097
+    }
+    100% {
+        background: #0087C9
+    }
+}
+
+@-webkit-keyframes gradientswitch {
+    0% {
+        background: #0087C9;
+    }
+    16% {
+        background: #EF4A53;
+    }
+    32% {
+        background: #FFB463;
+    }
+    49% {
+        background: #33D5D4;
+    }
+    65% {
+        background: #254356;
+    }
+    81% {
+        background :#5B4097
+    }
+    100% {
+        background: #0087C9
+    }
+}
+.header:after{
+    content:"";
+    background: linear-gradient(-120deg, rgba(245, 33, 33, 0) 87%, rgba(255, 255, 255, 0.08) 15%), linear-gradient(-110deg, rgba(27, 0, 255, 0) 85%, rgba(255, 255, 255, 0.08) 15%), linear-gradient(-103deg, rgba(255, 33, 33, 0) 84%, rgba(255, 255, 255, 0.08) 15%), radial-gradient(circle, rgba(0, 135, 201, 0) 0%, rgba(0, 135, 201, 0) 100%);
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top:0;
+    bottom:0;
+}
+.head-content{
+	text-align: center;
+}
+.head-content h1{
+    font-size: 38px;
+    line-height: 40px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.head-content p{
+    font-size: 18px;
+    line-height: 28px;
+    color: #fff;
+    max-width: 625px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.button {
+    font-family: 'Geomanist Book';
+    font-size: 16px;
+    padding: 12px 60px 10px 60px;
+    display: inline-block;
+    min-width: 224px;
+    text-align: center;
+    border-radius: 1px;
+    margin-top: 20px;
+}
+.main-button{
+	background-color: rgba(0,0,0,0.2);
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+    padding: 12px 35px 10px 35px;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+.second-button {
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #FFF;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    padding: 12px 35px 10px 35px;
+    margin-left: 20px;
+}
+a{
+    text-decoration: none;
+    outline: 0;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.tab{
+    position: absolute;
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    bottom: 0;
+}
+.main-button:hover{
+	background-color: rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.1);
+	color: #FFF;
+}
+.second-button:hover{
+	background-color: rgba(255,255,255,0.3);
+	color: #FFF;
+	border: 1px solid #106C9E;
+}
+.head-title{
+	height: 60px;
+    margin-bottom: 70px;
+}
+.head-content i{
+    font-size: 24px!important;
+	margin-right: 5px;
+}
+.nav{
+    list-style: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.nav li{
+    display: inline-block;
+	margin: auto 15px;
+    position: relative;
+}
+.nav li a{
+	display: block;
+    text-transform: capitalize;
+    padding: 26px 5px 22px 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 16px;
+}
+.nav li a:hover{
+    color: #fff;
+    border-bottom: 3px solid #fff;
+    padding: 26px 5px 19px 5px;
+    transition: none;
+	background-color: transparent;
+}
